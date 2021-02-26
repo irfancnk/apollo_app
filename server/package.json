@@ -1,0 +1,15 @@
+{
+  "name": "apollo-app",
+  "version": "1.0.0",
+  "description": "Apollo Server App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Irfan Can Kaleli",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.21.0",
+    "graphql": "^15.5.0"
+  }
+}
