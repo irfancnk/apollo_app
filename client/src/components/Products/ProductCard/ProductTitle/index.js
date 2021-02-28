@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 
 const ProductTitle = ({ title, label }) => {
-    console.log(title, label);
     return (
         <TitleContainer>
             <h2>{label} - {title}</h2>

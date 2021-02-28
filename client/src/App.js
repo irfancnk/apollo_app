@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //
 import GqlProvider from "./graphql/Provider";
 import Products from "./containers/Products";
+import Product from "./containers/Product";
 
-const Product = () => <div>Product</div>
 
 const App = () => {
     return (
