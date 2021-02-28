@@ -11,8 +11,6 @@ export const LOAD_PRODUCTS = gql`
             currency
             shipment
             images {
-                small {url}
-                medium {url}
                 large {url}
             }
         }
@@ -31,8 +29,6 @@ export const LOAD_PRODUCT = gql`
             images {
                 large {
                     url
-                    width
-                    height
                 }
             }
             shipment
