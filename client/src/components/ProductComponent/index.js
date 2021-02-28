@@ -32,15 +32,25 @@ const Wrapper = styled.div`
 `;
 
 const BackButton = styled.button`
+  font-weight: 400;
   margin: 1rem;
-  background: #dddddc;
+  background: #0d62ff;
+  color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   border: none;
   outline:none;
+  &:hover {
+    opacity: 0.75;
+  }
+
+
 `;
 
 export default ProductComponent;
+
+
+
