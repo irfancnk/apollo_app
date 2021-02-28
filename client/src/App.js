@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//
+import GqlProvider from "./graphql/Provider";
+import Products from "./containers/Products";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Product = () => <div>Product</div>
+
+const App = () => {
+    return (
+        <GqlProvider>
+            <Router>
+                <Switch>
+                    <Route path="/products/:id">
+                        <Product />
+                    </Route>
+                    <Route path="/">
+                        <Products />
+                    </Route>
+                </Switch>
+            </Router>
+        </GqlProvider>
+    );
+};
 
 export default App;

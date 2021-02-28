@@ -1,44 +1,76 @@
 const { ApolloServer, gql } = require('apollo-server');
-
-const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
-  }
-
-  type Query {
-    books: [Book]
-  }
-`;
+const typeDefs = require('./graphql/typeDefs');
+const products = require('./products.json');
 
 
-
-const books = [
-    {
-        title: 'The Awakening',
-        author: 'Kate Chopin',
-    },
-    {
-        title: 'City of Glass',
-        author: 'Paul Auster',
-    },
-];
-
-
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
     Query: {
-        books: () => books,
+        products: () => products,
+        product: (parent, { id }) => {
+            return products.filter(x => x.id === id)[0]
+        }
     },
 };
 
+const server = new ApolloServer({
+    typeDefs,
+    resolvers
+});
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
-
-// The `listen` method launches a web server.
 server.listen().then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const typeDefs = gql`
+//   type Book {
+//     title: String
+//     author: String
+//   }
+//   type Query {
+//     books: [Book]
+//   }
+// `;
+// const books = [
+//     {
+//         title: 'The Awakening',
+//         author: 'Kate Chopin',
+//     },
+//     {
+//         title: 'City of Glass',
+//         author: 'Paul Auster',
+//     },
+// ];
+
+// const server = new ApolloServer({ typeDefs, resolvers });
+// server.listen().then(({ url }) => {
+//     console.log(`🚀  Server ready at ${url}`);
+// });
