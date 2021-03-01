@@ -10,7 +10,7 @@ import ShipmentTag from "./ShipmentTag";
 const ProductCard = ({ product }) => {
     const { id, title, images, shipment, currency, price, label } = product;
     return (
-        <Container to={`/products/${id}`}>
+        <Container to={`/products/${id}`} data-testid="linkcontainer">
             <Wrapper>
                 <ProductImage images={images} title={title} />
                 <ProductTitle title={title} label={label} />
