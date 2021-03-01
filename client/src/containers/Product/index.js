@@ -13,10 +13,8 @@ const Product = () => {
     const { data, loading, error } = useQuery(LOAD_PRODUCT, {
         variables: { id },
     });
-
     if (loading) return <LoadingComponent />;
     if (error) return <ErrorComponent message="An error occured while loading the product" />;
-
     return (
         <div>
             {data.product && <ProductComponent product={data.product} />}

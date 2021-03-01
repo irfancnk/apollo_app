@@ -8,9 +8,9 @@ const ProductComponent = ({ product }) => {
     const history = useHistory();
     
     return (
-        <Container>
+        <Container data-testid="productcomponent">
             <Wrapper>
-                <BackButton onClick={() => history.push("/")}>Go Back</BackButton>
+                <BackButton onClick={() => history.push("/")} data-testid="backbutton">Go Back</BackButton>
                 <ProductCard key={product.id} product={product} />
             </Wrapper>
         </Container>
