@@ -1,8 +1,5 @@
-import TestRenderer from 'react-test-renderer';
-import { act, render, screen, waitFor } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { act, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import userEvent from '@testing-library/user-event';
 import Products from './index';
 import renderWithRouter from '../../setupTests';
 import { MockedProvider } from '@apollo/client/testing';

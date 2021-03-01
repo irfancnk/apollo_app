@@ -1,5 +1,3 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import ProductComponent from './index';
@@ -36,7 +34,7 @@ test('product component renders subcomponents correctly', () => {
 });
 
 
-test('product card redirects to main page correctly', () => {
+test('product component redirects to main page correctly on button click', () => {
     const historyMock = { push: jest.fn(), location: {}, listen: jest.fn() };
     const { history, getByTestId } = renderWithRouter(<ProductComponent product={product} />);
     const backButton = getByTestId('backbutton');

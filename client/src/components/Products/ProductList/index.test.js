@@ -1,7 +1,4 @@
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
-import userEvent from '@testing-library/user-event';
 import ProductList from './index';
 import renderWithRouter from '../../../setupTests';
 
@@ -47,7 +44,7 @@ const products = [
     }
 ]
 
-test('product card renders subcomponents correctly', () => {
+test('product list renders subcomponents for every product', () => {
     const { history, getAllByTestId } = renderWithRouter(<ProductList products={products} />)
     const allLinkContainers = getAllByTestId('linkcontainer');
     expect(allLinkContainers).toHaveLength(3); // 3 PRODUCT CARDS FOR 3 COMPONENTS
