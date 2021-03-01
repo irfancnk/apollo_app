@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const ProductTitle = ({ title, label }) => {
     return (
-        <TitleContainer>
+        <TitleContainer data-testid="producttitle">
             <h2>{label} - {title}</h2>
         </TitleContainer>
     );

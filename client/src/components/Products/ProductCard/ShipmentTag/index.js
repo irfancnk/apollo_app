@@ -2,28 +2,12 @@ import React from "react";
 import styled from "styled-components";
 //
 import DeliveryImg from "../../../../assets/delivery.png";
-
-
-const shipmentInformation = {
-    "0": {
-        "text": "Ücretsiz – Aynı Gün Kargo",
-        "image": true
-    },
-    "1": {
-        "text": "Ücretsiz Kargo",
-        "image": true
-    },
-    "2": {
-        "text": "",
-        "image": false
-    }
-}
+import shipmentInformation from "../../../../constants/EnumShipment";
 
 const ShipmentTag = ({ shipment }) => {
-
     return (
         <Wrapper>
-            {shipmentInformation[shipment].image && <Img src={DeliveryImg} alt={shipmentInformation[shipment].text} style={{height: "0.9rem"}}></Img>}
+            {shipmentInformation[shipment].image && <Img data-testid="shipmentimage" src={DeliveryImg} alt={shipmentInformation[shipment].text}></Img>}
             <Span>
                 {shipmentInformation[shipment].text}
             </Span>

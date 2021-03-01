@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const PriceTag = ({ price, currency }) => {
     return (
-        <H1>
+        <H1 data-testid="pricetag">
             {price.toLocaleString('us-US', { style: 'currency', currency: currency })}
         </H1>
     );
@@ -20,9 +20,6 @@ const H1 = styled.h1`
     border-radius: 10px;
     color: black;
 `;
-
-
-
 
 
 export default PriceTag;
