@@ -5,7 +5,7 @@ import ErrorGif from "../../assets/error.gif";
 
 const ErrorComponent = ({ message }) => {
     return (
-        <Container>
+        <Container data-testid="errorcomponent">
             <img src={ErrorGif} alt="Error occured" />
             <h1>{message}</h1>
         </Container>

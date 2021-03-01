@@ -5,7 +5,7 @@ import ProductCard from "../ProductCard";
 
 const ProductList = ({ products }) => {
     return (
-        <Container>
+        <Container data-testid="productlist">
             <h2>Found {products.length} products.</h2>
             <CardWrapper>
                 {products.map((product, index) => (

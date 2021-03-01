@@ -4,7 +4,7 @@ import styled from "styled-components";
 //
 const LoadingComponent = () => {
     return (
-        <Container>
+        <Container data-testid="loadingcomponent">
             <HashLoader color="#0d62ff" size="75px" />
         </Container>
     );
