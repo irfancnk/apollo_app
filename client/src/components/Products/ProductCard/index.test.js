@@ -31,10 +31,11 @@ test('product card renders subcomponents correctly', () => {
     expect(shipmentImage).toBeInTheDocument();
 });
 
-test('product card redirects to product correctly', () => {
+test('product card redirects to product page correctly', () => {
     const { history, getByTestId } = renderWithRouter(<ProductCard product={product} />)
     const linkContainer = getByTestId('linkcontainer');
     userEvent.click(linkContainer);
+    // check history path after product card is clicked => redirection
     expect(history.location.pathname).toEqual(`/products/${product.id}`)
 });
 
