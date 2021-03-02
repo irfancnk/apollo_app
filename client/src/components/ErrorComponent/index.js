@@ -3,6 +3,9 @@ import styled from "styled-components";
 // 
 import ErrorGif from "../../assets/error.gif";
 
+/**
+ * @param {String} param0 Message that informs what is the error occured
+ */
 const ErrorComponent = ({ message }) => {
     return (
         <Container data-testid="errorcomponent">

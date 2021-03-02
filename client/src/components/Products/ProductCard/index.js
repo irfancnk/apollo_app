@@ -7,6 +7,10 @@ import ProductTitle from "./ProductTitle";
 import PriceTag from "./PriceTag";
 import ShipmentTag from "./ShipmentTag";
 
+/**
+ * Shows different labels and image of product
+ * @param {Object} param0 Product object that is received from GraphQL query
+ */
 const ProductCard = ({ product }) => {
     const { id, title, images, shipment, currency, price, label } = product;
     return (

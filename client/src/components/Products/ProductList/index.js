@@ -3,6 +3,10 @@ import styled from "styled-components";
 //
 import ProductCard from "../ProductCard";
 
+/**
+ * Show cards of the received products
+ * @param {Array} param0 Products list that is received from GraphQL query
+ */
 const ProductList = ({ products }) => {
     return (
         <Container data-testid="productlist">

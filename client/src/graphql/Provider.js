@@ -9,6 +9,9 @@ import {
 import { onError } from "@apollo/client/link/error";
 //
 
+/**
+ * If error occurs,  alert it on message box
+ */
 const errorLink = onError(({ grahqlErrors, networkError }) => {
     if (grahqlErrors) {
         for (let i = 0; i < grahqlErrors.length; i++) {

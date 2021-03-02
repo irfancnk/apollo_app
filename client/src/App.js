@@ -5,7 +5,10 @@ import GqlProvider from "./graphql/Provider";
 import Products from "./containers/Products";
 import Product from "./containers/Product";
 
-
+/**
+ * Application entry point
+ * Wrapped with ApolloProvider and Router
+ */
 const App = () => {
     return (
         <GqlProvider>

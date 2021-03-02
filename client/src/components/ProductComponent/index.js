@@ -4,6 +4,11 @@ import { useHistory } from "react-router-dom";
 //
 import ProductCard from "../Products/ProductCard";
 
+/**
+ * Shows different labels and image of product. Planned to be more detailed than 
+ * default card view
+ * @param {Object} param0 Product object that is received from GraphQL query
+ */
 const ProductComponent = ({ product }) => {
     const history = useHistory();
     

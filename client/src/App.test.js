@@ -5,25 +5,25 @@ const reactRouterDom = require("react-router-dom")
 import App from './App';
 
 
-test('app page renders correctly on main route /', () => {
+test('app page renders loading on route /', async () => {
     reactRouterDom.BrowserRouter = ({ children }) => <div>{children}</div>
     const { getByTestId, debug } = render(
         <MemoryRouter initialEntries={['/']}>
             <App />
         </MemoryRouter>
     );
-    let impressumPage = getByTestId("loadingcomponent")
-    expect(impressumPage).toBeInTheDocument()
+    const loadingMessage = screen.getByText(/loading products/i);
+    expect(loadingMessage).toBeInTheDocument();
 });
 
 
-test('app page renders correctly on product route /', () => {
+test('app page renders loading on route /products ', () => {
     reactRouterDom.BrowserRouter = ({ children }) => <div>{children}</div>
     const { getByTestId, debug } = render(
-        <MemoryRouter initialEntries={['/products/123']}>
+        <MemoryRouter initialEntries={['/products/testid']}>
             <App />
         </MemoryRouter>
     );
-    let impressumPage = getByTestId("loadingcomponent")
-    expect(impressumPage).toBeInTheDocument()
+    const loadingMessage = screen.getByText(/loading product/i);
+    expect(loadingMessage).toBeInTheDocument();
 });
